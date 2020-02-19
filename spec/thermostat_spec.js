@@ -22,5 +22,10 @@ describe('Thermostat', function() {
         thermostat.decrease(10)
         expect(function(){thermostat.decrease();}).toThrow(new Error("Temperature is too low"));
     });
+
+    it('it shows if saving mode is on', function() {
+        thermostat.isSavingModeOn()
+        expect(thermostat.powerSaving).toBe(true)
+    });
 });
 
