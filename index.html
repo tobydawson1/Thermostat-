@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Thermostat</title>
+  </head>
+  <h1> Thermostat </h1>
+  <body>
+    <script src="jquery.js"></script>
+    <script> 
+    $(document).ready(function(){
+        var thermostat = new Thermostat();
+
+        updateTemperature();
+   
+        $("#temperature-up").on('click', function() {
+            thermostat.increase(1);
+            updateTemperature();
+         })
+
+        $("#temperature-down").on('click', function() {
+            thermostat.decrease(1);
+            updateTemperature();
+        })
+
+        $("#temperature-reset").on('click', function(){
+            thermostat.reset()
+            updateTemperature()
+        })
+
+        $('#powersaving-switch').on('click', function() {
+            thermostat.pSaver()
+            $("#power-saving-status").text(thermostat.powerSaving);
+
+        })
+
+        $('#select-city').submit(function(event) {
+            event.preventDefault();
+            var city = $('#current-city').val();
+            $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+             $('#current-temperature').text(data.main.temp);
+            })
+        })
+       
+
+        function updateTemperature() {
+            $('#temperature').text(thermostat.temp);
+            $('#temperature').attr('class', thermostat.usage());
+        }
+    })
+    
+    </script>
+    <section>
+      <h1> Current room temperature: <span id="temperature"></h1>
+      <p>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <button id="temperature-reset">reset</button>
+        power saving mode is <span id="power-saving-status"></span>
+        <button id="powersaving-switch">PSM switch</button>
+      </p>
+    </section>
+    <section>
+        <h1>Current temperature in: <span id="current-temperature"></span></h1>
+        <form id="select-city">
+          <input id="current-city" type="text" placeholder="Enter a city"></input>
+          <input type="submit"></input>
+        </form>
+      </section>
+    <script src="src/thermostat.js"></script>
+  </body>
+</html>     

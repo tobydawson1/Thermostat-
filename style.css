@@ -1,0 +1,31 @@
+body {
+  background-color: powderblue;
+  text-align:center;
+}
+
+h1 {
+  font-family: fantasy;
+  font-size: 300%;
+}
+
+#temperature-up {border-radius: 50%;}
+#temperature-down {border-radius: 50%;}
+#temperature-reset {border-radius: 50%;}
+#powersaving-switch {border-radius: 50%;}
+
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: black;
+}
+
+.high-usage {
+  color: red;
+}
+
+#temperature-up{
+    color: blue;
+}

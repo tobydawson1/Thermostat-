@@ -1,7 +1,10 @@
 function Thermostat() {
     this.temp = 20;
     this.minimumTemperature = 10;
-    this.powerSaving = false
+    this.powerSaving = true;
+    this.defaultTemp = 20;
+    this.lowUsage = 18;
+    this.mediumUsage = 25;
 }
 
 Thermostat.prototype.temperature = function() {
@@ -21,9 +24,28 @@ Thermostat.prototype.decrease = function(increment) {
     return this.temp -= increment
 }
 
-Thermostat.prototype.isSavingModeOn = function(){
-    this.powerSaving = true
-    return this.powerSaving
+Thermostat.prototype.pSaver = function(){
+    if (this.powerSaving === true){
+        this.powerSaving = false
+    }else {
+        this.powerSaving = true
+    }
+    
 } 
+
+Thermostat.prototype.reset = function() {
+    this.temp = this.defaultTemp
+
+}
+
+Thermostat.prototype.usage = function() {
+    if (this.temp <= this.lowUsage)
+        return 'low-usage';
+    else if (this.temp > this.lowUsage && this.temp < this.mediumUsage)
+        return 'medium-usage';
+    else 
+        return 'high-usage';
+
+}
 
 
