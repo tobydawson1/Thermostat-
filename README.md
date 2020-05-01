@@ -1,8 +1,8 @@
 ## Makers Academy - Week 5
 
-# Thermostat-
+# Thermostat-JS
 
-[Projects](#MVP) | [Skills](#Installation) | [Education](#Functionality) |
+[Task](#Task) | [Installation](#Installation) | [Functionality](#Functionality) |
 
 Technologies: Javascript, Jasmine, Rspec, HTML, CSS
 
