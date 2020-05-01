@@ -31,10 +31,10 @@ $ bundle
 $ open SpecRunner.html
 ```
 
-run the app on a local server and use on the browser: http://localhost:9292
+Run the index file
 
 ```
-$rackup
+$ open index.html
 ```
 
 
