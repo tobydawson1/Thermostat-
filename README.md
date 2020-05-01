@@ -2,6 +2,8 @@
 
 [Projects](#MVP) | [Skills](#Installation) | [Education](#Functionality) |
 
+Technologies: Javascript, Jasmine, Rspec, HTML, CSS
+
 ![Thermostat](screenshots/thermostat.png)
 
 # Task
