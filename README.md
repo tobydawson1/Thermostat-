@@ -29,7 +29,7 @@ $ gem install bundle
 $ bundle
 ```
 
-3. Run jasmine for tests and coverage
+3. Run the jasmine spech runner for tests and coverage
 
 ```
 $ open SpecRunner.html
