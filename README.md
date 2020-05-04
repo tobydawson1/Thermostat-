@@ -35,7 +35,7 @@ $ bundle
 $ open SpecRunner.html
 ```
 
-Run the index file
+4. Run the index file
 
 ```
 $ open index.html
